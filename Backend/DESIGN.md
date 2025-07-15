@@ -1,7 +1,7 @@
-# URL Shortener Microservice — Design Document
+# URL Shortener Microservice
 
 ## Overview
-This microservice provides robust URL shortening and analytics, with mandatory integration of a reusable Logging Middleware. It is designed for clarity, maintainability, and production-readiness.
+This microservice provides robust URL shortening and analytics, with mandatory integration of a reusable Logging Middleware. 
 
 ## Key Design Choices
 - **Single Microservice:** All endpoints are handled within a single Express app for simplicity and ease of deployment.
@@ -42,18 +42,3 @@ This microservice provides robust URL shortening and analytics, with mandatory i
   - Increments click count, logs click event.
   - 404 if not found, 410 if expired.
   - Logs all actions and errors.
-
-## Error Handling
-- Returns appropriate HTTP status codes (400, 404, 409, 410, 500) with descriptive JSON error messages.
-- All errors are logged via the Logging Middleware.
-
-## Assumptions
-- All users are pre-authorized; no authentication is required.
-- Shortcodes are alphanumeric and of reasonable length (default 6 chars if generated).
-- Location is a dummy value ('India') for all clicks.
-- The Logging Middleware endpoint and token are available and functional.
-
-## Scalability & Maintainability
-- Modular code structure (separate models, routes, logger).
-- ORM-based data access for easy migration to other SQL databases.
-- Logging is decoupled and reusable across other services. 
