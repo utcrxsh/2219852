@@ -16,14 +16,6 @@ Reusable logging middleware for backend microservices.
    LOG_AUTH_TOKEN=your_token_here
    ```
 
-## Usage
-```js
-const { logEvent } = require('./src/logger');
-
-// Example usage
-logEvent('backend', 'info', 'route', 'Short URL created successfully');
-```
-
 ## Parameters
 - `stack`: e.g., 'backend'
 - `level`: 'debug', 'info', 'warn', 'error', 'fatal'
